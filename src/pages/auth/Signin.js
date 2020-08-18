@@ -13,9 +13,11 @@ const Signin = (props) => {
 
   useEffect(() => {
     if (signinResponse) {
+      //TIDAK NULL ATAU DIDEFENISIKAN
       history.push("dashboard");
     }
   }, [signinResponse]);
+
   return (
     <Form className="m-4">
       <Form.Group controlId="formBasicEmail">

@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 
 import { Form, Button } from "react-bootstrap";
-import { withRouter, Link } from "react-router-dom";
+import { withRouter, Link, useHistory } from "react-router-dom";
+
+//TODO: BAGIAN REDUX
 import { connect } from "react-redux";
 import { signup } from "../../store/actions";
 
@@ -10,6 +12,8 @@ const Signup = (props) => {
   const [name, setName] = useState("");
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const history = useHistory();
+
   return (
     <Form className="m-4">
       <Form.Group controlId="formBasicEmail">
@@ -41,9 +45,10 @@ const Signup = (props) => {
       </Form.Group>
       <Button
         variant="primary"
-        onClick={() =>
-          signup({ name: name, username: username, password: password })
-        }
+        onClick={() => {
+          signup({ name: name, username: username, password: password });
+          history.push("/");
+        }}
       >
         Submit
       </Button>

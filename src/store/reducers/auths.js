@@ -1,10 +1,9 @@
 import * as actionTypes from "../actions/actionTypes";
 
 const initialState = {
-  admin: { username: "admin", password: "admin" },
-  users: [],
+  users: [{ name: "admin", username: "admin", password: "admin" }],
   signinResponse: false,
-  signedUser: {},
+  signedUser: null,
 };
 
 const auths = (state = initialState, action) => {
